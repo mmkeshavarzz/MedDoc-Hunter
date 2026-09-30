@@ -14,7 +14,6 @@ DEST_CHANNEL = os.environ.get("DEST_CHANNEL")
 
 # لیست کانال‌ها (با کامای دقیق و جدا از هم)
 CHANNELS = [
-    "ifmbkfu",
     "kazankay",
     "Russianway2024",
     "AtlasOfAnatomy",
@@ -68,7 +67,7 @@ def main():
             
             messages = soup.find_all('div', class_='tgme_widget_message')
             
-            for msg in reversed(messages[-15:]):  # بررسی ۱۵ پیام آخر
+            for msg in reversed(messages[-1500:]):  # بررسی ۱۵ پیام آخر
                 doc_wrap = msg.find('div', class_='tgme_widget_message_document')
                 if doc_wrap:
                     title_tag = doc_wrap.find('div', class_='tgme_widget_message_document_title')
