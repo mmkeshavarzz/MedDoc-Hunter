@@ -1,0 +1,28 @@
+name: Medical Doc Hunter
+
+on:
+  schedule:
+    - cron: '0 */12 * * *' # هر ۱۲ ساعت
+  workflow_dispatch: 
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python 🐍
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies 💊
+        run: pip install -r requirements.txt
+        
+      - name: Run Scraper 🚀
+        env:
+          API_ID: ${{ secrets.API_ID }}
+          API_HASH: ${{ secrets.API_HASH }}
+          SESSION_STRING: ${{ secrets.SESSION_STRING }}
+          DEST_CHANNEL: ${{ secrets.DEST_CHANNEL }}
+        run: python scraper.py
