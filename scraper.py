@@ -14,9 +14,9 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN") # از بات‌فادر بگیر
 DEST_CHANNEL = os.environ.get("DEST_CHANNEL") # مثلا: @MyPrivateMedChannel یا آیدی عددی
 
 CHANNELS = [
-    "ifmbkfu", "kazankay", "Russianway2024" # آیدی کانال‌های هدف بدون @
+    "ifmbkfu", "kazankay", "Russianway2024", # آیدی کانال‌های هدف بدون @
 
-    "AtlasOfAnatomy", "tums_write1401", "medofast_balini" 
+    "AtlasOfAnatomy", "tums_write1401", "medofast_balini", 
     "anatomi_akland", "dr_jozveh", "MedBuk"
 ]
 
