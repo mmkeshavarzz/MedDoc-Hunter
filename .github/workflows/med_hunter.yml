@@ -1,9 +1,9 @@
-name: Medical Doc Hunter
+name: Medical Doc Hunter (Ninja Edition 🥷)
 
 on:
   schedule:
-    - cron: '0 */12 * * *' # هر ۱۲ ساعت
-  workflow_dispatch: 
+    - cron: '0 */12 * * *' # هر ۱۲ ساعت یکبار بیدار میشه
+  workflow_dispatch: # دکمه دستی برای اجرای فوری
 
 jobs:
   hunt:
@@ -17,12 +17,13 @@ jobs:
           python-version: '3.10'
           
       - name: Install dependencies 💊
-        run: pip install -r requirements.txt
+        # کتابخونه‌های جدید برای اسکریپینگ
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
         
-      - name: Run Scraper 🚀
+      - name: Run Stealth Scraper 🚀
         env:
-          API_ID: ${{ secrets.API_ID }}
-          API_HASH: ${{ secrets.API_HASH }}
-          SESSION_STRING: ${{ secrets.SESSION_STRING }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           DEST_CHANNEL: ${{ secrets.DEST_CHANNEL }}
         run: python scraper.py
