@@ -59,7 +59,7 @@ def main():
             # پیدا کردن تمام پیام‌ها
             messages = soup.find_all('div', class_='tgme_widget_message')
             
-            for msg in messages[-10:]: # فقط ۱۰ پیام آخر رو چک می‌کنیم که سریع باشه
+            for msg in messages[-1000:]: # فقط ۱۰ پیام آخر رو چک می‌کنیم که سریع باشه
                 # بررسی وجود فایل (داکیومنت)
                 doc_wrap = msg.find('div', class_='tgme_widget_message_document')
                 if doc_wrap:
