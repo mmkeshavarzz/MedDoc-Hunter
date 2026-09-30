@@ -15,6 +15,9 @@ DEST_CHANNEL = os.environ.get("DEST_CHANNEL") # مثلا: @MyPrivateMedChannel �
 
 CHANNELS = [
     "ifmbkfu", "kazankay", "Russianway2024" # آیدی کانال‌های هدف بدون @
+
+    "AtlasOfAnatomy", "tums_write1401", "medofast_balini" 
+    "anatomi_akland", "dr_jozveh", "MedBuk"
 ]
 
 KEYWORDS = {
